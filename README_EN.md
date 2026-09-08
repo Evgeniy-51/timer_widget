@@ -26,12 +26,12 @@ When launched, the timer appears in the upper-right corner of the screen. Drag i
 
 Four buttons are displayed below the timer:
 
-- **Start** begins the timer from the start. Pressing it while the timer is already running restarts the current count.
-- **Pause** pauses the timer. Press it again to resume.
-- **Clock** opens the mode and interval controls.
-- **Settings** opens the application settings.
+- **▶** begins the timer from the start. Pressing it while the timer is already running restarts the current count.
+- **⏸** pauses the timer. Press it again to resume.
+- **🕐** opens the mode and interval controls.
+- **⚙** opens the application settings.
 
-There is no separate reset button: **Start** also serves as reset and restart.
+There is no separate reset button: **▶** also serves as reset and restart.
 
 ## Count-down and Count-up Modes
 
