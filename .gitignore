@@ -1,0 +1,25 @@
+# Build
+[Bb]in/
+[Oo]bj/
+artifacts/
+*.pdb
+
+# Self-contained publish + installer
+publish/
+installer/publish/
+InstallerOutput/
+
+# IDE
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.rsuser
+*.DotSettings.user
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store

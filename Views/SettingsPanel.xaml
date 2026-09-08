@@ -1,0 +1,30 @@
+<UserControl x:Class="TimerWidget.Views.SettingsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="12,4,12,12">
+        <TextBlock Text="{DynamicResource StrLanguage}" Foreground="{DynamicResource IconBrush}" FontSize="11" Margin="0,0,0,4"/>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton x:Name="LangRu" Content="RU" GroupName="Lang" Style="{DynamicResource ChipBtn}"
+                         Checked="LangChanged" Tag="ru"/>
+            <RadioButton x:Name="LangEn" Content="EN" GroupName="Lang" Style="{DynamicResource ChipBtn}"
+                         Checked="LangChanged" Tag="en"/>
+        </StackPanel>
+        <TextBlock Text="{DynamicResource StrTheme}" Foreground="{DynamicResource IconBrush}" FontSize="11" Margin="0,10,0,4"/>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton x:Name="DarkBtn" Content="{DynamicResource StrDark}" GroupName="Theme" Style="{DynamicResource ChipBtn}"
+                         Checked="ThemeChanged"/>
+            <RadioButton x:Name="LightBtn" Content="{DynamicResource StrLight}" GroupName="Theme" Style="{DynamicResource ChipBtn}"
+                         Checked="ThemeChanged"/>
+        </StackPanel>
+        <TextBlock Text="{DynamicResource StrSize}" Foreground="{DynamicResource IconBrush}" FontSize="11" Margin="0,10,0,4"/>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton x:Name="SizeS" Content="S" GroupName="Size" Style="{DynamicResource ChipBtn}"                          Checked="OnSizePicked" Tag="S"/>
+            <RadioButton x:Name="SizeM" Content="M" GroupName="Size" Style="{DynamicResource ChipBtn}" Checked="OnSizePicked" Tag="M"/>
+            <RadioButton x:Name="SizeL" Content="L" GroupName="Size" Style="{DynamicResource ChipBtn}" Checked="OnSizePicked" Tag="L"/>
+            <RadioButton x:Name="SizeXl" Content="XL" GroupName="Size" Style="{DynamicResource ChipBtn}" Checked="OnSizePicked" Tag="XL"/>
+        </StackPanel>
+        <CheckBox x:Name="SecondsChk" Content="{DynamicResource StrShowSeconds}" Checked="SecondsChanged" Unchecked="SecondsChanged"/>
+        <CheckBox x:Name="SoundChk" Content="{DynamicResource StrSound}" Checked="SoundChanged" Unchecked="SoundChanged"/>
+        <CheckBox x:Name="AutostartChk" Content="{DynamicResource StrAutostart}" Checked="AutostartChanged" Unchecked="AutostartChanged"/>
+    </StackPanel>
+</UserControl>

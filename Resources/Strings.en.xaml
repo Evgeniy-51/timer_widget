@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+    <sys:String x:Key="StrLanguage">Language</sys:String>
+    <sys:String x:Key="StrTheme">Theme</sys:String>
+    <sys:String x:Key="StrDark">Dark</sys:String>
+    <sys:String x:Key="StrLight">Light</sys:String>
+    <sys:String x:Key="StrSize">Size</sys:String>
+    <sys:String x:Key="StrShowSeconds">Show seconds</sys:String>
+    <sys:String x:Key="StrSound">Sound alert</sys:String>
+    <sys:String x:Key="StrAutostart">Start with Windows</sys:String>
+    <sys:String x:Key="StrMode">Mode</sys:String>
+    <sys:String x:Key="StrCountDown">Countdown</sys:String>
+    <sys:String x:Key="StrCountUp">Count-up</sys:String>
+    <sys:String x:Key="StrDuration">Duration</sys:String>
+    <sys:String x:Key="StrHours">h</sys:String>
+    <sys:String x:Key="StrMinutes">min</sys:String>
+    <sys:String x:Key="TipMinimize">Minimize</sys:String>
+    <sys:String x:Key="TipClose">Close</sys:String>
+    <sys:String x:Key="TipStart">Start (restart)</sys:String>
+    <sys:String x:Key="TipPause">Pause / resume</sys:String>
+    <sys:String x:Key="TipClock">Mode and time</sys:String>
+    <sys:String x:Key="TipSettings">Settings</sys:String>
+    <sys:String x:Key="TrayShow">Show</sys:String>
+    <sys:String x:Key="TrayStart">Start</sys:String>
+    <sys:String x:Key="TrayPause">Pause</sys:String>
+    <sys:String x:Key="TrayExit">Exit</sys:String>
+</ResourceDictionary>

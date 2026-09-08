@@ -1,0 +1,63 @@
+﻿<Window x:Class="TimerWidget.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:TimerWidget.Controls"
+        xmlns:v="clr-namespace:TimerWidget.Views"
+        Title="Timer Widget"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="True"
+        Topmost="True"
+        ShowActivated="False"
+        SizeToContent="WidthAndHeight"
+        MinWidth="180"
+        MinHeight="72"
+        SnapsToDevicePixels="True"
+        UseLayoutRounding="True"
+        MouseLeftButtonDown="OnDrag">
+    <Border x:Name="Plaque"
+            Background="{DynamicResource BgBrush}"
+            CornerRadius="12"
+            Padding="10,6,10,8"
+            MinWidth="220">
+        <Border.LayoutTransform>
+            <ScaleTransform x:Name="UiScale" ScaleX="1" ScaleY="1"/>
+        </Border.LayoutTransform>
+        <StackPanel>
+            <Grid>
+                <c:SevenSegmentDisplay x:Name="Board"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,10,0,4"
+                                       OnBrush="{DynamicResource DigitOnBrush}"
+                                       OffBrush="{DynamicResource DigitOffBrush}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <Button Style="{DynamicResource CaptionBtn}" Content="_" ToolTip="{DynamicResource TipMinimize}" Click="OnTray"/>
+                    <Button Style="{DynamicResource CaptionBtn}" Content="×" ToolTip="{DynamicResource TipClose}" Click="OnExit"/>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,2,0,2">
+                <Button Style="{DynamicResource GlyphBtn}" Content="&#xE768;" ToolTip="{DynamicResource TipStart}" Click="OnStart"/>
+                <Button x:Name="PauseBtn" Style="{DynamicResource GlyphBtn}" Content="&#xE769;" ToolTip="{DynamicResource TipPause}"
+                        Click="OnPause"/>
+                <Button x:Name="ClockBtn" Style="{DynamicResource GlyphBtn}" Click="OnClock" ToolTip="{DynamicResource TipClock}">
+                    <Grid>
+                        <TextBlock x:Name="ClockGlyph" Text="&#xE121;" FontFamily="Segoe MDL2 Assets"/>
+                    </Grid>
+                </Button>
+                <Button x:Name="GearBtn" Style="{DynamicResource GlyphBtn}" Content="&#xE713;" ToolTip="{DynamicResource TipSettings}" Click="OnGear"/>
+            </StackPanel>
+
+            <Border x:Name="ClockHost" Visibility="Collapsed" Background="{DynamicResource PanelAltBrush}"
+                    CornerRadius="8" Margin="0,6,0,0">
+                <v:ClockPanel x:Name="Clock"/>
+            </Border>
+            <Border x:Name="GearHost" Visibility="Collapsed" Background="{DynamicResource PanelAltBrush}"
+                    CornerRadius="8" Margin="0,6,0,0">
+                <v:SettingsPanel x:Name="Gear"/>
+            </Border>
+        </StackPanel>
+    </Border>
+</Window>

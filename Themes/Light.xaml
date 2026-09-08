@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="BgBrush" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="DigitOnBrush" Color="#1A1A1A"/>
+    <SolidColorBrush x:Key="DigitOffBrush" Color="#221A1A1A"/>
+    <SolidColorBrush x:Key="IconBrush" Color="#444444"/>
+    <SolidColorBrush x:Key="HoverBrush" Color="#18000000"/>
+    <SolidColorBrush x:Key="CaptionBrush" Color="#88444444"/>
+    <SolidColorBrush x:Key="FinishBgBrush" Color="#F0F0F0"/>
+    <SolidColorBrush x:Key="FinishDigitBrush" Color="#C62828"/>
+    <SolidColorBrush x:Key="PanelAltBrush" Color="#E4E4E4"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="#3F51B5"/>
+</ResourceDictionary>
