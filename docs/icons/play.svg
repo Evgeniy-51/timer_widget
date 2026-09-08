@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <style>
+    .i { fill: #222; }
+    @media (prefers-color-scheme: dark) { .i { fill: #e6edf3; } }
+  </style>
+  <path class="i" d="M4 2.2v11.6L14 8 4 2.2z"/>
+</svg>
