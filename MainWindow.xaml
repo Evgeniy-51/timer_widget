@@ -39,7 +39,7 @@
             </Grid>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,2,0,2">
-                <Button Style="{DynamicResource GlyphBtn}" Content="&#xE768;" ToolTip="{DynamicResource TipStart}" Click="OnStart"/>
+                <Button x:Name="StartBtn" Style="{DynamicResource GlyphBtn}" Content="&#xE768;" ToolTip="{DynamicResource TipStart}" Click="OnStart"/>
                 <Button x:Name="PauseBtn" Style="{DynamicResource GlyphBtn}" Content="&#xE769;" ToolTip="{DynamicResource TipPause}"
                         Click="OnPause"/>
                 <Button x:Name="ClockBtn" Style="{DynamicResource GlyphBtn}" Click="OnClock" ToolTip="{DynamicResource TipClock}">

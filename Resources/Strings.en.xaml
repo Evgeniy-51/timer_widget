@@ -18,6 +18,7 @@
     <sys:String x:Key="TipMinimize">Minimize</sys:String>
     <sys:String x:Key="TipClose">Close</sys:String>
     <sys:String x:Key="TipStart">Start (restart)</sys:String>
+    <sys:String x:Key="TipResume">Resume</sys:String>
     <sys:String x:Key="TipPause">Pause / resume</sys:String>
     <sys:String x:Key="TipClock">Mode and time</sys:String>
     <sys:String x:Key="TipSettings">Settings</sys:String>

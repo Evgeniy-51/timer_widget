@@ -100,12 +100,21 @@ internal sealed class TimerEngine : INotifyPropertyChanged
     public bool IsRunning => RunState == RunState.Running;
     public bool IsPaused => RunState == RunState.Paused;
     public bool CanPause => RunState is RunState.Running or RunState.Paused;
+    public bool CanResumeFromPause =>
+        RunState == RunState.Paused &&
+        !(Mode == TimerMode.CountUp && Elapsed >= TimeSpan.FromSeconds(MaxTotalSeconds));
 
     public TimeSpan Elapsed =>
         _elapsedBase + (_watch.IsRunning ? _watch.Elapsed : TimeSpan.Zero);
 
     public void Start()
     {
+        if (CanResumeFromPause)
+        {
+            TogglePause();
+            return;
+        }
+
         _runDuration = LastDuration;
         _elapsedBase = TimeSpan.Zero;
         _watch.Restart();

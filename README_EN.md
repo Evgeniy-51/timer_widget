@@ -26,12 +26,10 @@ When launched, the timer appears in the upper-right corner of the screen. Drag i
 
 Four buttons are displayed below the timer:
 
-- <img src="docs/icons/play.svg" alt="Play" width="14" height="14"> begins the timer from the start. Pressing it while the timer is already running restarts the current count.
-- <img src="docs/icons/pause.svg" alt="Pause" width="14" height="14"> pauses the timer. Press it again to resume.
+- <img src="docs/icons/play.svg" alt="Play" width="14" height="14"> starts the timer. If it is already running, this restarts from the beginning. If it is paused, this resumes from the same point. There is no separate reset button: to reset from a pause, press <img src="docs/icons/play.svg" alt="Play" width="14" height="14"> again after the timer has resumed.
+- <img src="docs/icons/pause.svg" alt="Pause" width="14" height="14"> pauses the timer. The digits dim so the pause is obvious at a glance. Press it again to resume.
 - <img src="docs/icons/clock.svg" alt="Clock" width="14" height="14"> opens the mode and interval controls.
 - <img src="docs/icons/settings.svg" alt="Settings" width="14" height="14"> opens the application settings.
-
-There is no separate reset button: <img src="docs/icons/play.svg" alt="Play" width="14" height="14"> also serves as reset and restart.
 
 ## Count-down and Count-up Modes
 
@@ -76,7 +74,7 @@ On first launch, the interface follows the Windows display language: Russian sys
 
 The size presets scale the entire widget: S is 75% of the standard size, M is the standard size, and L and XL are approximately one-third and two-thirds larger.
 
-When enabled, seconds appear to the right of the minutes in smaller digits. When seconds are hidden, an incomplete minute remains visible for its full duration during count-down—for example, `01:00` remains displayed until the final minute actually begins. The colon between hours and minutes flashes once per second while the timer is running, providing a clear activity indicator.
+When enabled, seconds appear to the right of the minutes in smaller digits. When seconds are hidden, an incomplete minute remains visible for its full duration during count-down—for example, `01:00` remains displayed until the final minute actually begins. The colon between hours and minutes flashes once per second while the timer is running. On pause the colon stops blinking and the digits dim.
 
 ## Settings Storage
 

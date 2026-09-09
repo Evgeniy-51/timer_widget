@@ -32,7 +32,13 @@ public partial class MainWindow : Window
         Clock.Persist = Save;
         Gear.Settings = _settings;
         Gear.Persist = Save;
-        Gear.ThemeChangedByUser = _ => ApplyFlash(_engine.RunState == RunState.Finished);
+        Gear.ThemeChangedByUser = _ =>
+        {
+            if (_alarmLocked || _engine.RunState == RunState.Finished)
+                ApplyFlash(true);
+            else
+                RefreshBoardLook();
+        };
         Gear.SizeChangedByUser = _ => ApplyScale();
         Gear.SecondsChangedByUser = on =>
         {
@@ -55,6 +61,7 @@ public partial class MainWindow : Window
         PauseBtn.IsEnabled = _engine.CanPause;
         UpdateClockGlyph();
         ApplyScale();
+        Loc.Changed += OnLocChanged;
 
         Loaded += OnLoaded;
         StateChanged += OnStateChanged;
@@ -102,6 +109,8 @@ public partial class MainWindow : Window
             ? (Brush)FindResource("HoverBrush")
             : Brushes.Transparent;
         UpdateClockGlyph();
+        UpdateStartTip();
+        RefreshBoardLook();
     }
 
     private void UpdateClockGlyph()
@@ -162,7 +171,24 @@ public partial class MainWindow : Window
     private void ApplyFlash(bool on)
     {
         Plaque.Background = (Brush)FindResource(on ? "FinishBgBrush" : "BgBrush");
-        Board.OnBrush = (Brush)FindResource(on ? "FinishDigitBrush" : "DigitOnBrush");
+        if (on)
+            Board.OnBrush = (Brush)FindResource("FinishDigitBrush");
+        else
+            RefreshBoardLook();
+    }
+
+    private void RefreshBoardLook()
+    {
+        if (_alarmLocked || _engine.RunState == RunState.Finished)
+            return;
+        Board.OnBrush = (Brush)FindResource(_engine.IsPaused ? "PausedDigitBrush" : "DigitOnBrush");
+    }
+
+    private void OnLocChanged() => UpdateStartTip();
+
+    private void UpdateStartTip()
+    {
+        StartBtn.ToolTip = Loc.Get(_engine.CanResumeFromPause ? "TipResume" : "TipStart");
     }
 
     private void EnsureOnScreen()
@@ -194,11 +220,17 @@ public partial class MainWindow : Window
 
     private void Start()
     {
+        ClosePanels();
+        if (_engine.CanResumeFromPause)
+        {
+            _engine.Start();
+            return;
+        }
+
         StopBlinkTimer();
         StopSound();
         _alarmLocked = false;
         ApplyFlash(false);
-        ClosePanels();
         _engine.Start();
         FlashDigitsOnce();
     }
@@ -215,8 +247,7 @@ public partial class MainWindow : Window
     private void OnStartBlinkTick(object? sender, EventArgs e)
     {
         StopStartBlink();
-        if (_engine.RunState != RunState.Finished)
-            Board.OnBrush = (Brush)FindResource("DigitOnBrush");
+        RefreshBoardLook();
     }
 
     private void StopStartBlink()
@@ -363,6 +394,7 @@ public partial class MainWindow : Window
     protected override void OnClosed(EventArgs e)
     {
         SystemEvents.DisplaySettingsChanged -= OnDisplayChanged;
+        Loc.Changed -= OnLocChanged;
         StopBlinkTimer();
         StopStartBlink();
         _sound?.Dispose();

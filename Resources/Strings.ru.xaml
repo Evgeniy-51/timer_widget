@@ -18,6 +18,7 @@
     <sys:String x:Key="TipMinimize">Свернуть</sys:String>
     <sys:String x:Key="TipClose">Закрыть</sys:String>
     <sys:String x:Key="TipStart">Старт (сначала)</sys:String>
+    <sys:String x:Key="TipResume">Продолжить</sys:String>
     <sys:String x:Key="TipPause">Пауза / продолжить</sys:String>
     <sys:String x:Key="TipClock">Режим и время</sys:String>
     <sys:String x:Key="TipSettings">Настройки</sys:String>

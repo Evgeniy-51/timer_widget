@@ -3,6 +3,7 @@
     <SolidColorBrush x:Key="BgBrush" Color="#1A1A1A"/>
     <SolidColorBrush x:Key="DigitOnBrush" Color="#E8E8E8"/>
     <SolidColorBrush x:Key="DigitOffBrush" Color="#22E8E8E8"/>
+    <SolidColorBrush x:Key="PausedDigitBrush" Color="#73E8E8E8"/>
     <SolidColorBrush x:Key="IconBrush" Color="#C0C0C0"/>
     <SolidColorBrush x:Key="HoverBrush" Color="#22FFFFFF"/>
     <SolidColorBrush x:Key="CaptionBrush" Color="#88E8E8E8"/>
