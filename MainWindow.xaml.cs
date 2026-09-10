@@ -380,17 +380,6 @@ public partial class MainWindow : Window
     private bool PanelOpen =>
         ClockHost.Visibility == Visibility.Visible || GearHost.Visibility == Visibility.Visible;
 
-    protected override void OnPreviewKeyDown(KeyEventArgs e)
-    {
-        if (e.Key == Key.Escape)
-        {
-            ClosePanels();
-            e.Handled = true;
-        }
-
-        base.OnPreviewKeyDown(e);
-    }
-
     protected override void OnClosed(EventArgs e)
     {
         SystemEvents.DisplaySettingsChanged -= OnDisplayChanged;
